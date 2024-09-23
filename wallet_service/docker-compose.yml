@@ -4,9 +4,9 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: JavaCode
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 0410
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -19,9 +19,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
-    environment:
-      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
-      DEBUG: ${DEBUG}
+
 
 volumes:
   postgres_data:
